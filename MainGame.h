@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Sprite.h"
 #include "GLS_Program.h"
+#include "Window.h"
 
 using namespace std;
 
@@ -16,14 +17,14 @@ class MainGame
 private:
 	int width;
 	int height;
-	int cnt;
-	SDL_Window* window;
+	float time;
+	Window* window;
 	Sprite sprite;
 	GLS_Program program;
 	void init();
 	void processInput();
 	void initShaders();
-
+	int cnt;
 public:
 	GameState gameState;
 	MainGame();

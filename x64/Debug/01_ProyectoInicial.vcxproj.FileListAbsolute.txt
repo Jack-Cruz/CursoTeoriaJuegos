@@ -1,1 +1,9 @@
-C:\Users\pc\Downloads\CursoTeoriaJuegos\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\01_ProyectoInicial\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\02_GameClass\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\02_Shaders\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\03_Square\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\04_Shader\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\06_Uniform\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\07_IOManager\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\07_IOManager - copia\x64\Debug\01_ProyectoInicial.exe
+D:\UPC_2024\Teoria de juegos\Teoria_juegos\09 TA2\x64\Debug\01_ProyectoInicial.exe

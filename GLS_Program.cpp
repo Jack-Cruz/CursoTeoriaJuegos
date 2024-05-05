@@ -95,3 +95,12 @@ void GLS_Program::unuse()
 		glDisableVertexAttribArray(i);
 	}
 }
+
+GLuint GLS_Program::getUniformLocation(const string& name)
+{
+	GLuint location = glGetUniformLocation(programID, name.c_str());
+	if (location == GL_INVALID_INDEX) {
+		fatalError("Variable uniform " + name + " no encontrado.");
+	}
+	return location;
+}

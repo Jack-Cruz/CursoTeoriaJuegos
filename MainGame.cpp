@@ -17,17 +17,9 @@ MainGame::~MainGame()
 void MainGame::init()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
-	window = SDL_CreateWindow("Left 4 Dead", SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
-
-	// Validar si hubo un error
-	SDL_GLContext glContext = SDL_GL_CreateContext(window);
-	GLenum error = glewInit();
-	if (error != GLEW_OK) {
-		// falta validad estado de glew
-	}
-	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+	window = new Window();
+	window->create("Left 4 Dead 2", width, height, 0);
+	//SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	initShaders();
 }
 
@@ -35,16 +27,14 @@ void MainGame::draw()
 {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	if (cnt == 100) {
+	cnt++;
+	if (cnt >= 100) {
 		program.use();
 		sprite.draw();
 		program.unuse();
-		cnt = 0;
 	}
-	else {
-		cnt++;
-	}
-	SDL_GL_SwapWindow(window);
+	if (cnt == 200) cnt = 0;
+	window->swapWindow();
 }
 
 
@@ -52,7 +42,7 @@ void MainGame::draw()
 void MainGame::run()
 {
 	init();
-	sprite.init(0, 0, 1, 1);
+	sprite.init(-1, -1, 2, 2, "img/Left4Dead2.png");
 	update();
 }
 
@@ -88,5 +78,6 @@ void MainGame::initShaders()
 		"Shader/colorShaderFrag.txt");
 	program.addAtribute("vertexPosition");
 	program.addAtribute("vertexColor");
+	program.addAtribute("vertexUV");
 	program.linkShader();
 }
