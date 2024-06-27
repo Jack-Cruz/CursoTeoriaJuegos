@@ -2,6 +2,7 @@
 #include <fstream>
 #include "ResourceManager.h"
 #include "Error.h"
+#include <iostream>
 
 Level::Level(const string& fileName)
 {
@@ -26,6 +27,7 @@ void Level::parseLevel()
 	glm::vec4 uvRect(0.0f, 0.0f, 1.0f, 1.0f);
 	Color color;
 	color.set(255, 255, 255, 255);
+
 	for (size_t y = 0; y < levelData.size(); y++)
 	{
 		for (size_t x = 0; x < levelData[y].size(); x++)
@@ -36,10 +38,14 @@ void Level::parseLevel()
 			switch (tile)
 			{
 			case 'R':
+				spritebatch.draw(destRect, uvRect,
+					ResourceManager::getTexture("Images/block_bricks.png").id,
+					0.0f, color);
+				break;  
 			case 'B':
 				spritebatch.draw(destRect, uvRect,
 					ResourceManager::getTexture("Images/red_bricks.png").id,
-					0.0f,color);
+					0.0f, color);
 				break;
 			case 'G':
 				spritebatch.draw(destRect, uvRect,

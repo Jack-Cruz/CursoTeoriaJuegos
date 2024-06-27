@@ -100,7 +100,8 @@ void MainGame::init() {
 
 void MainGame::initLevel() {
 	levels.push_back(new Level("Level/level1.txt"));
-	currentLevel = 0;
+	levels.push_back(new Level("Level/level2.txt"));
+	currentLevel = 1;
 	spriteBatch.init();
 	// Player
 	player = new Player();
@@ -191,6 +192,16 @@ void MainGame::update() {
 		{
 			zombies[i]->update(levels[currentLevel]->getLevelData(),
 				humans, zombies);
+			for (size_t j = 0; j < humans.size(); j++) 
+			{
+				if (zombies[i]->collideWithAgent(humans[j])) {
+					zombies.push_back(new Zombie());
+					zombies.back()->init(1.3f, humans[j]->getPosition());
+					delete humans[j];
+					humans[j] = humans.back();
+					humans.pop_back();
+ 				}
+			}
 		}
 
 	}

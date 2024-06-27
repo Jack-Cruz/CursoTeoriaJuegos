@@ -1,5 +1,6 @@
 #pragma once
 #include "Agent.h"
+#include "Human.h"
 class Zombie :
     public Agent
 {
@@ -12,5 +13,6 @@ public:
     void update(vector<string>& levelData,
         vector<Human*>& humans,
         vector<Zombie*>& zombies);
+    Human* getNearestHuman(vector<Human*>& humans);
 };
 

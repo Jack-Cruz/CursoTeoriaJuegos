@@ -116,7 +116,7 @@ void SpriteBatch::sortGlyph()
 
 	case GlyphSortType::TEXTURE:
 		stable_sort(glyphPointers.begin(), glyphPointers.end(), compareTexture);
-		break;
+		break;;
 	}
 }
 

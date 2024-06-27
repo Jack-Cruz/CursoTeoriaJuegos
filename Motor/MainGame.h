@@ -22,7 +22,6 @@ private:
 	int width;
 	int height;
 	SpriteBatch spriteBatch;
-	SpriteBatch hudBatch;
 	vector<Level*> levels;
 	vector<Human*> humans;
 	vector<Zombie*> zombies;
