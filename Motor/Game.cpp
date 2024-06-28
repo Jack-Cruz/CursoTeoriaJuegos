@@ -18,6 +18,7 @@ void Game::run()
 	while (isRunning)
 	{
 		inputManager.update(); 
+		update();
 		draw();
 		window.swapWindow();
 	}
@@ -39,7 +40,7 @@ void Game::onSDLEvent(SDL_Event& event)
 
 bool Game::init()
 {
-	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
+	SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1); //Verificar
 	initSystems();
 	onInit();
 	addScreen();
